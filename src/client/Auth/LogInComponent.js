@@ -1,5 +1,6 @@
-import BaseComponent from "../Shared/Components/BaseComponent/BaseComponent";
-import styles from "../Shared/css/AuthFroms.module.scss"
+
+import styles from "../shared/css/AuthFroms.module.scss"
+import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
 
 export class LogInComponent extends BaseComponent {
 

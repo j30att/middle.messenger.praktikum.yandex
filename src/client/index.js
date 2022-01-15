@@ -1,8 +1,8 @@
-import styles from "../src/Shared/css/Common.module.scss"
+import styles from "./shared/css/Common.module.scss"
 import { routes } from "./Routes/Routes"
 import RouterService from "./Services/RouterService";
 import RenderService from "./Services/RenderService";
-import RouterLinkDirective from "./Shared/Directives/RouterLinkDirective";
+import RouterLinkDirective from "./shared/directives/RouterLinkDirective";
 import ServiceLocator from "./Services/ServiceLocator";
 import ChatService from "./Services/ChatService";
 import ProfileService from "./Services/ProfileService";

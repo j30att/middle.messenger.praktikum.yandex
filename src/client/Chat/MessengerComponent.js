@@ -1,4 +1,4 @@
-import BaseComponent from "../Shared/Components/BaseComponent/BaseComponent";
+import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
 import styles from "./MessengerComponent.module.scss";
 import { attach } from "../Shared/icon/attach.svg";
 import { dotsSvg } from "../Shared/icon/dots.svg"

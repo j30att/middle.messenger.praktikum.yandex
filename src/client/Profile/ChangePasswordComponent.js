@@ -1,4 +1,4 @@
-import BaseComponent from "../Shared/Components/BaseComponent/BaseComponent";
+import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
 import styles from "./ProfileComponent.module.scss"
 
 export default class ChangePasswordComponent extends BaseComponent{

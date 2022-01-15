@@ -1,4 +1,4 @@
-import BaseComponent from "../Shared/Components/BaseComponent/BaseComponent";
+import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
 import styles from "./ChatManagerComponent.module.scss"
 
 export class ChatManagerComponent extends BaseComponent{
@@ -62,3 +62,5 @@ export class ChatManagerComponent extends BaseComponent{
     this._renderTemplate = this.render();
   }
 }
+
+

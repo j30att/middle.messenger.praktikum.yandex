@@ -1,4 +1,4 @@
-import { profile } from "../Shared/MockData/Profile"
+import { profile } from "../shared/mockData/Profile"
 
 export default class ProfileService {
   getProfile() {

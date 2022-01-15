@@ -3,8 +3,18 @@
   "version": "1.0.0",
   "description": "Project for first module",
   "source": "index.html",
+  "targets": {
+    "client": {
+      "source": ".//src//client//index.js",
+      "distDir": "dist/client"
+    },
+    "server": {
+      "source": ".//src//server//server.js",
+      "distDir": "dist/server"
+    }
+  },
   "scripts": {
-    "dev": "parcel",
+    "watch": "parcel",
     "build": "parcel build"
   },
   "author": "Igor Ippolitov",
@@ -18,11 +28,12 @@
     "posthtml-img-autosize": "^0.1.6"
   },
   "dependencies": {
+    "express": "^4.17.2",
     "autoprefixer": "^10.4.2",
     "handlebars": "^4.7.7",
     "postcss-modules": "^4.3.0"
   },
   "staticFiles": {
-    "staticPath": "src/shared/assets"
+    "staticPath": "src/client/shared/assets"
   }
 }
