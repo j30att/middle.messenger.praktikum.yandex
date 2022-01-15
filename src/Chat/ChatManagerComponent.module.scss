@@ -1,0 +1,132 @@
+.chat {
+  font-family: Arial;
+  display: flex;
+  height: 100vh;
+}
+
+.contacts {
+  flex: 40%;
+  max-width: 400px;
+  padding: 0px 10px 10px 10px;
+  background-color: #fbfbfb;
+  border-right: 1px solid #eaeaea;
+  overflow-y: scroll;
+  box-sizing: content-box;
+}
+
+.profile {
+  color: #999999;
+  text-align: end;
+  cursor: pointer;
+  line-height: 50px;
+  display: block;
+}
+
+.search{
+  width: 100%;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 12px;
+  background-color: #efefef;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card{
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.avatar {
+  height: 47px;
+  width: 47px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #efefef;
+  border-radius: 25px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.name {
+  font-size: 13px;
+  line-height: 13px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.last-message{
+  max-width: 200px;
+  color: #999999;
+  font-weight: 500;
+}
+
+.text {
+  padding-left: 10px;
+}
+
+
+.card_wrapper {
+  display: flex;
+}
+
+.info {
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.unread-message{
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  background: #3369F3;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.control_wrapper {
+  position: sticky;
+  top: 0;
+  background-color: #fbfbfb;
+}
+
+.cards_wrapper {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #eaeaea;
+}
+
+.messages {
+  flex: 60%;
+  overflow: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hello_message {
+  height: 100%;
+  color: #999999;
+  font-size: 12px;
+  line-height: 100vh;
+  text-align: center;
+}

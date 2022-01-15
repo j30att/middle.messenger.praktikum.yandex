@@ -1,0 +1,25 @@
+.checkBoxMenu{
+  display: none;
+  margin-right: 15px;
+}
+
+.modalMenu {
+  position: fixed;
+  opacity: 0;
+  z-index: -100000;
+  background-color: #fff;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+  border-radius: 12px;
+  padding: 7px 15px;
+  transition: all 200ms ease-in-out;
+}
+
+.modalMenuUser{
+  top: 70px;
+  right: 10px;
+}
+
+.checkBoxMenu:checked ~.modalMenuUser {
+  z-index: 100000;
+  opacity: 1;
+}
