@@ -11,7 +11,7 @@
     "buildClient": "parcel build",
     "buildServer": "webpack",
     "buildAll": "parcel build && webpack",
-    "start": "yarn buildAll && node dist/server.js"
+    "start": "webpack && node dist/server.js"
   },
   "author": "Igor Ippolitov",
   "license": "ISC",
