@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Project for first module",
   "source": "index.html",
+  "engines": {
+    "node": ">=12.18"
+  },
   "scripts": {
     "dev": "parcel index.html",
     "buildClient": "parcel build",
