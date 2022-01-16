@@ -1,0 +1,49 @@
+$primary: #3369F3;
+$alert: #FF2F2F;
+$primary-grey: #999999;
+
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+div::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+div {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+.clear {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  font-family: Arial;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+
+button {
+  color: white;
+  background-color: $primary;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
