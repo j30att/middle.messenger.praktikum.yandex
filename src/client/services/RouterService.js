@@ -1,3 +1,4 @@
+import NotFoundPage from "../errors/404";
 
 export default class RouterService {
 
@@ -48,10 +49,10 @@ export default class RouterService {
         acc.push(...this.bfs(find.children, path.slice(1)));
       }
       if (!find.children && path.length > 1) {
-        acc.push({path: '404'})
+        acc.push({path: '404', component: NotFoundPage})
       }
     } else {
-      acc.push({path: '404'})
+      acc.push({path: '404', component: NotFoundPage})
     }
     return acc;
   }

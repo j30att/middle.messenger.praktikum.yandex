@@ -1,14 +1,14 @@
-import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
-import styles from "./MessengerComponent.module.scss";
-import { attach } from "../Shared/icon/attach.svg";
-import { dotsSvg } from "../Shared/icon/dots.svg"
-import { imgSvg } from "../Shared/icon/img.svg"
-import { fileSvg } from "../Shared/icon/file.svg"
-import { pointSvg } from "../Shared/icon/point.svg"
-import { MenuModalComponent } from "./MenuModalComponent";
+import styles from "./messenger.module.scss";
+import { attach } from "../shared/icon/attach.svg";
+import { dotsSvg } from "../shared/icon/dots.svg"
+import { imgSvg } from "../shared/icon/img.svg"
+import { fileSvg } from "../shared/icon/file.svg"
+import { pointSvg } from "../shared/icon/point.svg"
+import MenuModalComponent from "./MenuModal";
+import BaseClass from "../shared/components/BaseClass";
 
 
-export class MessengerComponent extends BaseComponent {
+export default class Messenger extends BaseClass {
   _template = `
       <div class="{{styles.messengerWrapper}}">
         <div class="{{styles.header}}">

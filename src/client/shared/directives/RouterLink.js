@@ -1,4 +1,4 @@
-export default class RouterLinkDirective {
+export default class RouterLink {
   _selector = 'routerLink';
 
   constructor() {
@@ -11,6 +11,7 @@ export default class RouterLinkDirective {
   }
 
   handler(event){
+    event.preventDefault();
     window.location.href = event.currentTarget.getAttribute(this._selector);
   }
 }

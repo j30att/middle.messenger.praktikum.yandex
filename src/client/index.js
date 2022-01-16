@@ -1,11 +1,11 @@
-import styles from "./shared/css/Common.module.scss"
-import { routes } from "./Routes/Routes"
-import RouterService from "./Services/RouterService";
-import RenderService from "./Services/RenderService";
-import RouterLinkDirective from "./shared/directives/RouterLinkDirective";
-import ServiceLocator from "./Services/ServiceLocator";
-import ChatService from "./Services/ChatService";
-import ProfileService from "./Services/ProfileService";
+import styles from "./shared/css/common.module.scss"
+import { routes } from "./routes/Routes"
+import RouterService from "./services/RouterService";
+import RenderService from "./services/RenderService";
+import RouterLink from "./shared/directives/RouterLink";
+import ServiceLocator from "./services/ServiceLocator";
+import ChatService from "./services/ChatService";
+import ProfileService from "./services/ProfileService";
 
 const root = document.querySelector('#root');
 document.body.className = styles.clear;
@@ -32,7 +32,7 @@ const render = (callback) => {
 }
 
 render(()=>{
-  const directive = new RouterLinkDirective();
+  const directive = new RouterLink();
   renderService.addHandlers();
 });
 

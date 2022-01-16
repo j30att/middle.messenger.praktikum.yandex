@@ -1,7 +1,7 @@
 import Handlebars from "handlebars";
-import helpers from "../../HandleBarsHelpers";
+import helpers from "../HandleBarsHelpers";
 
-export default class BaseComponent {
+export default class BaseClass {
   _renderTemplate ='';
   _template = '';
   _context = {};

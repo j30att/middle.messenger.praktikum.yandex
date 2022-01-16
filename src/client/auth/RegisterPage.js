@@ -1,10 +1,7 @@
-import helpers from "../Shared/HandleBarsHelpers";
-import styles from "../Shared/css/AuthFroms.module.scss"
-import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
+import styles from "./auth.module.scss"
+import BaseClass from "../shared/components/BaseClass";
 
-const Handlebars = require("handlebars");
-
-export class RegisterComponent extends BaseComponent{
+export default class RegisterPage extends BaseClass{
   _template = `
     <div class="{{ styles.card }}">
       <h1 class="{{ styles.title }}">{{title}}</h1>

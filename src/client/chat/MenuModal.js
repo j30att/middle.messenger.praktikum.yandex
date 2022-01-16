@@ -1,7 +1,7 @@
-import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
-import styles from "./MenuModalComponent.module.scss"
+import styles from "./menuModal.module.scss"
+import BaseClass from "../shared/components/BaseClass";
 
-export class MenuModalComponent extends BaseComponent{
+export default class MenuModalComponent extends BaseClass{
   _template = `
       <div class="MENUAA">  
         CHAT MODAL COMPONENT

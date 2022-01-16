@@ -1,8 +1,7 @@
+import styles from "./auth.module.scss"
+import BaseClass from "../shared/components/BaseClass";
 
-import styles from "../shared/css/AuthFroms.module.scss"
-import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
-
-export class LogInComponent extends BaseComponent {
+export default class LogInPage extends BaseClass {
 
   _renderTemplate = '';
   _template = `

@@ -1,7 +1,8 @@
-import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
-import styles from "./ChatManagerComponent.module.scss"
 
-export class ChatManagerComponent extends BaseComponent{
+import styles from "./chatManager.module.scss"
+import BaseClass from "../shared/components/BaseClass";
+
+export default class ChatManager extends BaseClass{
   _template = `
     <div class="{{styles.chat}}">
       <div class="{{styles.contacts}}">

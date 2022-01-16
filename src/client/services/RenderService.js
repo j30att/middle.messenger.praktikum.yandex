@@ -1,3 +1,5 @@
+import NotFoundPage from "../errors/404";
+
 export default class RenderService {
 
   ROUTER_TAG = '<router>';
@@ -18,7 +20,11 @@ export default class RenderService {
       if (!!param) {
         parameter[paramName] = param;
       }
+
       const componentExec = this.createComponent(component, parameter)
+      if (componentExec instanceof NotFoundPage) {
+        return this.renderComponent(componentExec);
+      }
       const template = this.renderComponent(componentExec);
       doc = this.makeHtml(doc, template);
       this._componentStack.push(componentExec)

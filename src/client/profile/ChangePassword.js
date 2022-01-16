@@ -1,7 +1,7 @@
-import BaseComponent from "../shared/components/BaseComponent/BaseComponent";
-import styles from "./ProfileComponent.module.scss"
+import BaseClass from "../shared/components/BaseClass";
+import styles from "./profile.module.scss"
 
-export default class ChangePasswordComponent extends BaseComponent{
+export default class ChangePassword extends BaseClass{
   _template = `
       <div class="{{styles}}">  
         <form action="" class="{{styles.form}}">

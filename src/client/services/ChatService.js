@@ -1,4 +1,4 @@
-import { chats } from "../shared/mockData/Chats"
+import { chats } from "../shared/mockData/chats"
 
 export default class ChatService {
   getChats() {
