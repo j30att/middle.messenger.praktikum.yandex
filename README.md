@@ -1,6 +1,6 @@
 # Yandex practicum 
 ## Chat app
-
+https://yachat.netlify.app
 ---------
 
 ###Commands
