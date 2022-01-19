@@ -54,14 +54,15 @@ export default class Profile extends BaseClass {
 
   changeState(){
     const elem = document.querySelector(`.${styles.submit}`);
-    const controls = document.querySelector(`.${styles.controls}`);
-    console.log(elem.style.display);
-    if (elem.style.display === 'none') {
-      elem.style.display = 'block';
-      controls.style.display = 'none';
-    } else {
-      elem.style.display = 'none'
-      controls.style.display = 'block';
+    if (elem){
+      const controls = document.querySelector(`.${styles.controls}`);
+      if (elem.style.display === 'none') {
+        elem.style.display = 'block';
+        controls.style.display = 'none';
+      } else {
+        elem.style.display = 'none'
+        controls.style.display = 'block';
+      }
     }
   }
 
