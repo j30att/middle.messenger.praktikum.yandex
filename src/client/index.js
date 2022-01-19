@@ -1,4 +1,4 @@
-import styles from "./shared/css/common.module.scss"
+import styles from "./shared/style/common.module.scss"
 import { routes } from "./routes/Routes"
 import RouterService from "./services/RouterService";
 import RenderService from "./services/RenderService";

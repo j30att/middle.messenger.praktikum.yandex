@@ -1,7 +1,4 @@
-$primary: #3369F3;
-$alert: #FF2F2F;
-$primary-grey: #999999;
-
+@import "./variables.scss";
 
 * {
   box-sizing: border-box;
@@ -40,7 +37,7 @@ body {
 
 button {
   color: white;
-  background-color: $primary;
+  background-color: $mainBlu;
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;

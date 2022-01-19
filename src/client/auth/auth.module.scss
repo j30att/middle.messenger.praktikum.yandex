@@ -1,4 +1,4 @@
-
+@import "../shared/style/variables";
 .card {
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
     padding: 20px 0 10px 0;
     border: none;
     outline: none;
-    border-bottom: 2px solid #3369F3;
+    border-bottom: 2px solid $mainBlu;
 }
 .input-control::placeholder{
     color: #5d5d5d;
@@ -65,12 +65,12 @@
 .input-control:focus ~ label, .input-control:not(:placeholder-shown) ~ label {
     top: 10px;
     font-size:14px;
-    color:#3369F3;
+    color:$mainBlu;
 }
 
 .alert {
     padding: 5px 0 0 0;
-    color: red;
+    color: $alertRed;
     font-size: 12px;
     line-height: 12px;
 }

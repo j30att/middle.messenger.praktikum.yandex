@@ -1,3 +1,4 @@
+@import "../shared/style/variables";
 .profileWrapper {
   height: 100vh;
   display: flex;
@@ -13,8 +14,8 @@
   left: 0;
   height: 100vh;
   padding: 0 18px;
-  border-right: 1px solid #eaeaea;
-  background-color: #fbfbfb;
+  border-right: 1px solid $borderGrey;
+  background-color: $backgroundGrey;
   align-items: center;
   line-height: 100vh;
 }
@@ -25,7 +26,7 @@
   text-align: center;
   color: white;
   border-radius: 15px;
-  background-color: #3369F3;
+  background-color: $mainBlu;
   line-height: 30px;
   cursor: pointer;
 }
@@ -49,7 +50,7 @@
   height: 130px;
   position: absolute;
   font-size: 14px;
-  color: #fff;
+  color: white;
   content: "Поменять аватар";
   word-break: break-all;
   background-color: #000;
@@ -75,7 +76,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-top: 1px solid #EAEAEA;
+  border-top: 1px solid $borderGrey;
   width: 520px;
   transition: ease-in 500ms;
   border-bottom: 1px solid rgba(255, 255, 128, .0);
@@ -92,7 +93,7 @@
   border: none;
   text-align: end;
   font-size: 16px;
-  color: #999;
+  color: $primaryGrey;
   font-weight: 500;
 }
 
@@ -114,17 +115,17 @@
 
 .blue {
   font-weight: 600;
-  color: #3369F3;
+  color: $mainBlu;
 }
 
 .exit {
   font-weight: 600;
-  color: red;
+  color: $alertRed;
 }
 
 .footerControl {
   padding: 10px 0;
-  border-bottom: 1px solid #EAEAEA;
+  border-bottom: 1px solid $borderGrey;
   align-items: center;
   width: 510px;
   font-size: 16px;
@@ -134,12 +135,12 @@
 }
 
 .footerControl:hover{
-  border-bottom: 1px solid #3369F3 !important;
+  border-bottom: 1px solid $mainBlu !important;
   box-shadow: 0px 10px 15px -10px rgba(51,105,243, .5);
 }
 
 .control:hover{
-  border-bottom: 1px solid #3369F3 !important;
+  border-bottom: 1px solid $mainBlu !important;
   box-shadow: 0px 10px 15px -10px rgba(51,105,243, .5);
 }
 
