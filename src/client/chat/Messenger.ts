@@ -1,15 +1,15 @@
+
+// @ts-ignore
 import styles from "./messenger.module.scss";
-import { attach } from "../shared/icon/attach.svg";
-import { dotsSvg } from "../shared/icon/dots.svg"
-import { imgSvg } from "../shared/icon/img.svg"
-import { fileSvg } from "../shared/icon/file.svg"
-import { pointSvg } from "../shared/icon/point.svg"
+import { attach } from "../core/icon/attach.svg";
+import { dotsSvg } from "../core/icon/dots.svg"
+import { imgSvg } from "../core/icon/img.svg"
+import { fileSvg } from "../core/icon/file.svg"
+import { pointSvg } from "../core/icon/point.svg"
 import MenuModalComponent from "./MenuModal";
-import BaseClass from "../shared/components/BaseClass";
+import BaseComponent from "../core/components/BaseComponent";
 
-
-export default class Messenger extends BaseClass {
-  _template = `
+const template = `
       <div class="{{styles.messengerWrapper}}">
         <div class="{{styles.header}}">
           <div class="{{styles.companion}}">
@@ -68,65 +68,57 @@ export default class Messenger extends BaseClass {
       </div>  
   `;
 
-  _context = {
-    svg: {
-      attach: attach,
-      menu: dotsSvg,
-      img: imgSvg,
-      file: fileSvg,
-      point: pointSvg
-    },
-    styles: styles,
-    date: '19 июня',
-    opponent: {
-      name: 'Kolban Butilkin',
-      avatar: 'K',
-    },
-    messageL: {
-      text: `Привет! Смотри, тут всплыл интересный кусок лунной космической истории
+export default class Messenger extends BaseComponent {
+  constructor(props= {}) {
+    const state = {
+      svg: {
+        attach: attach,
+        menu: dotsSvg,
+        img: imgSvg,
+        file: fileSvg,
+        point: pointSvg
+      },
+      styles: styles,
+      date: '19 июня',
+      opponent: {
+        name: 'Kolban Butilkin',
+        avatar: 'K',
+      },
+      messageL: {
+        text: `Привет! Смотри, тут всплыл интересный кусок лунной космической истории
         — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов
         на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову
         говоря, все тушки этих камер все еще находятся на поверхности Луны,
         так как астронавты с собой забрали только кассеты с пленкой.`,
-      date: '19 июня',
-      time: '11:56',
-    },
-    messageR: {
-      text: 'Круто!',
-      check: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/></svg>`,
-      date: '19 июня',
-      time: '12:00',
-    },
-    headerMenu: [
-      {
-        title: 'Добавить пользователя'
+        date: '19 июня',
+        time: '11:56',
       },
-      {
-        title: 'Удалить пользователя'
-      }
-    ]
-  };
+      messageR: {
+        text: 'Круто!',
+        check: `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/></svg>`,
+        date: '19 июня',
+        time: '12:00',
+      },
+      headerMenu: [
+        {
+          title: 'Добавить пользователя'
+        },
+        {
+          title: 'Удалить пользователя'
+        }
+      ]
+    };
 
-  components = [
-    MenuModalComponent
-  ]
+    const _props = {
+      ...props,
+      ...state,
+      components: [MenuModalComponent],
+    }
 
-  constructor(param) {
-    super();
-    this.preRender();
-    this._renderTemplate = this.render();
+    super('Messenger', _props);
   }
 
-  preRender(){
-    const domParser = new DOMParser();
-    const dom = domParser.parseFromString(this._template, "text/html")
-    const elem = dom.querySelector('MenuModalComponent');
-    const attr = elem.attributes
-    console.log('elem: ', elem);
-    console.log('elem: ', elem.attributes);
-
-    // this.components.forEach((item) => {
-    //   console.log('item: ', item);
-    // })
+  render() {
+    return this.compileTemplate(template, this.props);
   }
 }

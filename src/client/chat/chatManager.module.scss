@@ -1,4 +1,4 @@
-@import "../shared/style/variables";
+@import "../core/style/variables";
 
 .chat {
   font-family: Arial;
@@ -10,14 +10,14 @@
   flex: 40%;
   max-width: 400px;
   padding: 0px 10px 10px 10px;
-  background-color: $backgroundGrey;
-  border-right: 1px solid $borderGrey;
+  background-color: var(--background-color);
+  border-right: 1px solid var(--border-color);
   overflow-y: scroll;
   box-sizing: content-box;
 }
 
 .profile {
-  color: $primaryGrey;
+  color: var(--primary-grey-color);
   text-align: end;
   cursor: pointer;
   line-height: 50px;
@@ -34,7 +34,7 @@
   width: 100%;
   padding: 10px;
   font-size: 12px;
-  background-color: $inputGrey;
+  background-color: var(--input-color);
   border: none;
   outline: none;
   border-radius: 8px;
@@ -47,7 +47,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 12px 0;
-  border-bottom: 1px solid $borderGrey;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .avatar {
@@ -73,7 +73,8 @@
 
 .last-message{
   max-width: 200px;
-  color: $primaryGrey;
+  overflow: hidden;
+  color: var(--primary-grey-color);
   font-weight: 500;
 }
 
@@ -114,7 +115,7 @@
 .cards_wrapper {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid $borderGrey;
+  border-top: 1px solid var(--border-color);
 }
 
 .messages {
@@ -127,7 +128,7 @@
 
 .hello_message {
   height: 100%;
-  color: $primaryGrey;
+  color: var(--primary-grey-color);
   font-size: 12px;
   line-height: 100vh;
   text-align: center;

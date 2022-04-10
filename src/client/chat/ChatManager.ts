@@ -1,9 +1,8 @@
-
+// @ts-ignore
 import styles from "./chatManager.module.scss"
-import BaseClass from "../shared/components/BaseClass";
+import BaseComponent from "../core/components/BaseComponent";
 
-export default class ChatManager extends BaseClass{
-  _template = `
+const template = `
     <div class="{{styles.chat}}">
       <div class="{{styles.contacts}}">
         <div class="{{styles.control_wrapper}}">
@@ -46,21 +45,27 @@ export default class ChatManager extends BaseClass{
     </div>  
   `;
 
-  _context = {
-    hello: 'Выберите чат чтобы отправить сообщение',
-    showHello: true,
-    styles:styles,
-  };
+export default class ChatManager extends BaseComponent{
+  constructor(props= {}) {
+    const chatService = window['locator'].get('chatService');
+    const routerService = window['locator'].get('router');
 
-  _chatService = {};
+    const state = {
+      hello: 'Выберите чат чтобы отправить сообщение',
+      showHello: routerService._path.length === 1,
+      styles:styles,
+      chats: chatService.getChats()
+    };
 
-  constructor(param) {
-    super();
-    const routerService = window.locator.get('router');
-    this._chatService = window.locator.get('chatService');
-    this._context.chats = this._chatService.getChats()
-    this._context.showHello = routerService._path.length === 1;
-    this._renderTemplate = this.render();
+    const _props = {
+      ...props,
+      ...state,
+    }
+    super("ChatManager", _props);
+  }
+
+  render() {
+    return this.compileTemplate(template, this.props);
   }
 }
 

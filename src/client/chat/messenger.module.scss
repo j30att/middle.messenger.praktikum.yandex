@@ -1,4 +1,4 @@
-@import "../shared/style/variables";
+@import "../core/style/variables";
 
 .messengerWrapper {
   height: 100%;
@@ -9,7 +9,7 @@
   position: sticky;
   top: 0;
   padding: 10px 0;
-  border-bottom: 1px solid $borderGrey;
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +30,7 @@
   justify-content: center;
   text-align: center;
   align-items: center;
-  background-color: $inputGrey;
+  background-color: var(--input-color);
   border-radius: 25px;
   font-size: 26px;
   font-weight: 700;
@@ -61,7 +61,7 @@
 }
 
 .date {
-  color: $primaryGrey;
+  color: var(--primary-grey-color);
   text-align: center;
   padding: 30px 0;
 }
@@ -70,7 +70,7 @@
   position: absolute;
   right: 11px;
   bottom: 11px;
-  color: $primaryGrey;
+  color: var(--primary-grey-color);
 
 }
 
@@ -81,7 +81,7 @@
   line-height: 15px;
   letter-spacing: 0em;
   text-align: left;
-  color: $message;
+  color: var(--message-text-color);
 }
 
 .time {
@@ -94,7 +94,7 @@
   padding: 11px;
   border-radius: 12px;
   margin-bottom: 10px;
-  background-color: $backgroundOpponent;
+  background-color: var(--background-message-opponent-color);
   position: relative;
 }
 
@@ -118,12 +118,12 @@
   color: #fff;
   padding: 0 5px;
   border-radius: 8px;
-  background: $primaryGrey;
+  background: var(--primary-grey-color);
 }
 
 .rightMessage {
   align-self: end;
-  background: $backgroundMy;
+  background: var(--background-message-my-color);
   padding: 10px;
   border-radius: 12px;
   display: inline-block;
@@ -170,7 +170,7 @@
 
 .editor {
   padding: 10px 20px;
-  background: $inputGrey;
+  background: var(--input-color);
   border-radius: 30px;
   outline: none;
   border: none;

@@ -12,4 +12,9 @@ export  default function helpers(){
     const escapedOutput ="<a " + attributes.join(" ") + ">" + escapedText + "</a>";
     return new Handlebars.SafeString(escapedOutput);
   });
+
+  Handlebars.registerHelper('isdefined', function (value) {
+    return value !== undefined;
+  });
+
 }

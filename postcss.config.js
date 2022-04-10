@@ -1,4 +1,4 @@
-import colors from './src/client/shared/style/colors'
+import colors from './src/client/core/style/colors'
 require('postcss-simple-vars')({ silent: true })
 require('postcss-nested')({ bubble: ['phone'] }),
 module.exports = {

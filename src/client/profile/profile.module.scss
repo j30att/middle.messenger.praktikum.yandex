@@ -1,4 +1,4 @@
-@import "../shared/style/variables";
+@import "../core/style/variables";
 .profileWrapper {
   height: 100vh;
   display: flex;
@@ -14,8 +14,8 @@
   left: 0;
   height: 100vh;
   padding: 0 18px;
-  border-right: 1px solid $borderGrey;
-  background-color: $backgroundGrey;
+  border-right: 1px solid var(--border-color);
+  background-color: var(--background-color);
   align-items: center;
   line-height: 100vh;
 }
@@ -26,7 +26,7 @@
   text-align: center;
   color: white;
   border-radius: 15px;
-  background-color: $mainBlu;
+  background-color: var(--primary-blue-color);
   line-height: 30px;
   cursor: pointer;
 }
@@ -76,7 +76,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-top: 1px solid $borderGrey;
+  border-top: 1px solid var(--border-color);
   width: 520px;
   transition: ease-in 500ms;
   border-bottom: 1px solid rgba(255, 255, 128, .0);
@@ -93,7 +93,7 @@
   border: none;
   text-align: end;
   font-size: 16px;
-  color: $primaryGrey;
+  color: var(--message-text-color);
   font-weight: 500;
 }
 
@@ -115,17 +115,17 @@
 
 .blue {
   font-weight: 600;
-  color: $mainBlu;
+  color: var(--primary-blue-color);
 }
 
 .exit {
   font-weight: 600;
-  color: $alertRed;
+  color: var(--alert-color);
 }
 
 .footerControl {
   padding: 10px 0;
-  border-bottom: 1px solid $borderGrey;
+  border-bottom: 1px solid var(--border-color);
   align-items: center;
   width: 510px;
   font-size: 16px;
@@ -135,12 +135,12 @@
 }
 
 .footerControl:hover{
-  border-bottom: 1px solid $mainBlu !important;
+  border-bottom: 1px solid var(--primary-blue-color) !important;
   box-shadow: 0px 10px 15px -10px rgba(51,105,243, .5);
 }
 
 .control:hover{
-  border-bottom: 1px solid $mainBlu !important;
+  border-bottom: 1px solid var(--primary-blue-color) !important;
   box-shadow: 0px 10px 15px -10px rgba(51,105,243, .5);
 }
 

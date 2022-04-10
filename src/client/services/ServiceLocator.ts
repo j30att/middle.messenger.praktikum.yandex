@@ -1,11 +1,11 @@
 export default class ServiceLocator {
   _store = {};
 
-  addInstance(name, service){
+  public addInstance(name, service) {
     this._store[name] = service;
   }
 
-  get(name){
+  public get(name) {
     return this._store[name];
   }
 }
