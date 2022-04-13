@@ -1,0 +1,159 @@
+@import "../core/style/variables";
+
+.profileWrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 60px;
+  position: relative;
+}
+
+.backWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 0 18px;
+  border-right: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  align-items: center;
+  line-height: 100vh;
+}
+
+.backButton {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+  background-color: var(--primary-blue-color);
+  line-height: 30px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 130px;
+  height: 130px;
+  background-color: #efefef;
+  border-radius: 75px;
+  color: black;
+  font-size: 100px;
+  line-height: 130px;
+  text-align: center;
+  cursor: pointer;
+  transition: ease-in 500ms;
+}
+
+.avatar::before {
+  display: block;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  font-size: 14px;
+  color: white;
+  content: "Поменять аватар";
+  word-break: break-all;
+  background-color: #000;
+  opacity: 0;
+  font-weight: 600;
+  border-radius: 75px;
+  transition: ease-in 300ms;
+}
+
+.avatar:hover::before {
+  opacity: 0.7;
+  color: white;
+}
+
+.name {
+  font-size: 16px;
+  padding: 20px 0 60px;
+  font-weight: 600;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid var(--border-color);
+  width: 520px;
+  transition: ease-in 500ms;
+  border-bottom: 1px solid rgb(255 255 128 / 0%);
+}
+
+.label {
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+}
+
+.input {
+  outline: none;
+  border: none;
+  text-align: end;
+  font-size: 16px;
+  color: var(--message-text-color);
+  font-weight: 500;
+}
+
+.form :first-child {
+  border-top: none;
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.submit {
+  margin: 50px auto 0;
+  width: 280px;
+}
+
+.blue {
+  font-weight: 600;
+  color: var(--primary-blue-color);
+}
+
+.exit {
+  font-weight: 600;
+  color: var(--alert-color);
+}
+
+.footerControl {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  width: 510px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: ease-in 500ms;
+}
+
+.footerControl:hover {
+  border-bottom: 1px solid var(--primary-blue-color) !important;
+  box-shadow: 0 10px 15px -10px rgb(51 105 243 / 50%);
+}
+
+.control:hover {
+  border-bottom: 1px solid var(--primary-blue-color) !important;
+  box-shadow: 0 10px 15px -10px rgb(51 105 243 / 50%);
+}
+
+.controls :last-child {
+  border-bottom: 1px solid rgb(51 105 243 / 0%);
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: none;
+}

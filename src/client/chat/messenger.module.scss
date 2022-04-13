@@ -1,0 +1,250 @@
+@import "../core/style/variables";
+
+.messengerWrapper {
+  height: 100%;
+  padding: 0 20px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(100vh - 120px);
+}
+
+.avatar {
+  height: 34px;
+  width: 34px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: var(--input-color);
+  border-radius: 25px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.companion {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  max-width: 200px;
+  padding-left: 10px;
+}
+
+.menu {
+  width: 24px;
+  height: 24px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu svg {
+  background-color: #f5f5f5;
+}
+
+.date {
+  color: var(--primary-grey-color);
+  text-align: center;
+  padding: 30px 0;
+}
+
+.leftMessage .time {
+  position: absolute;
+  right: 11px;
+  bottom: 11px;
+  color: var(--primary-grey-color);
+}
+
+.text {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0;
+  text-align: left;
+  color: var(--message-text-color);
+}
+
+.time {
+  font-size: 9px;
+}
+
+.leftMessage {
+  display: inline-block;
+  max-width: 400px;
+  padding: 11px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background-color: var(--background-message-opponent-color);
+  position: relative;
+}
+
+.leftMessageImage {
+  display: inline !important;
+  position: relative;
+  max-width: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.img img {
+  max-width: 350px;
+}
+
+.leftMessageImage .time {
+  position: absolute;
+  right: 11px;
+  bottom: 11px;
+  line-height: 12px;
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 8px;
+  background: var(--primary-grey-color);
+}
+
+.rightMessage {
+  align-self: end;
+  background: var(--background-message-my-color);
+  padding: 10px;
+  border-radius: 12px;
+  display: inline-block;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.check svg {
+  width: 12px;
+  height: 12px;
+  font-size: 10px;
+}
+
+.rightMessageWrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.rightMessageWrapper .text {
+  margin-right: 10px;
+}
+
+.footer {
+  padding: 10px 0;
+  border-top: 1px solid #eaeaea;
+}
+
+.formMessenger {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.submit {
+  width: 28px;
+  height: 28px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.editor {
+  padding: 10px 20px;
+  background: var(--input-color);
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+.img {
+  display: inline !important;
+  position: relative;
+}
+
+.attachWrapper {
+  position: fixed;
+  transform: none;
+  bottom: 75px;
+  z-index: -100000;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgb(0 0 0 / 14%);
+  border-radius: 12px;
+  padding: 7px 15px;
+  transition: all 200ms ease-in-out;
+  opacity: 0;
+}
+
+.attachItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.attachItem span {
+  padding-left: 10px;
+}
+
+.checkBoxAttach {
+  display: none;
+  margin-right: 15px;
+}
+
+.checkBoxMenu {
+  display: none;
+  margin-right: 15px;
+}
+
+.checkBoxAttach:checked ~ .modalMenuAttach {
+  z-index: 100000;
+  opacity: 1;
+}
+
+.checkBoxMenu:checked ~ .modalMenuUser {
+  z-index: 100000;
+  opacity: 1;
+}
+
+.navButton {
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+.modalMenu {
+  position: fixed;
+  opacity: 0;
+  z-index: -100000;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgb(0 0 0 / 14%);
+  border-radius: 12px;
+  padding: 7px 15px;
+  transition: all 200ms ease-in-out;
+}
+
+.modalMenuAttach {
+  bottom: 75px;
+}
+
+.modalMenuUser {
+  top: 65px;
+  right: 20px;
+}

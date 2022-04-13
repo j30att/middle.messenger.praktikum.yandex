@@ -1,0 +1,15 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 40px;
+}
+
+.text {
+  margin-bottom: 70px;
+}

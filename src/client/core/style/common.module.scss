@@ -1,0 +1,44 @@
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+div::-webkit-scrollbar {
+  display: none;
+}
+
+div {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: scroll;
+}
+
+.clear {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body {
+  font-family: Arial, serif;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+button {
+  color: white;
+  background-color: var(--primary-blue-color);
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
