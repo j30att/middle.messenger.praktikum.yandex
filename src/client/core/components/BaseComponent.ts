@@ -3,7 +3,7 @@ import helpers from '../HandleBarsHelpers';
 import Handlebars from 'handlebars';
 import EventBus from '../libs/EventBus';
 import { getUUID } from '../utils';
-import { ComponentMeta, EventProps } from '../types/Types';
+import IBaseComponent, { ComponentMeta, EventProps } from '../types/Types';
 import { ComponentProps } from '../types/Types';
 
 enum COMPONENT_EVENTS {
@@ -12,7 +12,7 @@ enum COMPONENT_EVENTS {
   ON_DESTROY = 'onChange',
 }
 
-export default class BaseComponent {
+export default class BaseComponent implements IBaseComponent{
   eventBus;
   props: ComponentProps;
   _element: Element | null;
@@ -26,7 +26,6 @@ export default class BaseComponent {
     props = {...props, childrenComponents: []}
     this.props = this._makePropsProxy(props);
     this.eventBus = () => eventBus;
-
     this.registerEvents(eventBus);
   }
 
@@ -81,7 +80,7 @@ export default class BaseComponent {
     return this._element;
   }
 
-  getChild() {
+  getChild():Array<any> | null {
     return this.props.components || null;
   };
 
@@ -125,7 +124,7 @@ export default class BaseComponent {
   }
 
   private _onInit() {
-    console.log('component init')
+    console.log('component on init')
   }
 
   private _onChange() {

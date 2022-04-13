@@ -44,3 +44,17 @@ export interface SearchProps extends ComponentProps{
   placeholder: 'Поиск',
   eventSelector: 'searchSelector'
 }
+
+export default interface IBaseComponent {
+  _element: Element | null,
+  _render: Function,
+  props: ComponentProps,
+  dispatchOnInit: Function,
+  dispatchOnChange: Function,
+  dispatchOnDestroy: Function,
+  registerEvents: Function,
+  render: Function,
+  getChild: Function,
+  removeHandlers: Function,
+  addHandlers: Function
+}
