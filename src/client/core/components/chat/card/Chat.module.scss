@@ -1,0 +1,63 @@
+.card_wrapper {
+  display: flex;
+}
+
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.avatar {
+  height: 47px;
+  width: 47px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #efefef;
+  border-radius: 25px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.name {
+  font-size: 13px;
+  line-height: 13px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.last-message {
+  max-width: 200px;
+  overflow: hidden;
+  color: var(--primary-grey-color);
+  font-weight: 500;
+}
+
+.text {
+  padding-left: 10px;
+}
+
+.info {
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.unread-message {
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  background: #3369f3;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 20px;
+}

@@ -1,4 +1,4 @@
-import HttpTransport, { HttpOptions } from '../core/class/HttpTransport';
+import HttpTransport, { HttpOptions } from '../core/libs/HttpTransport';
 
 export default class HttpService {
   transport: HttpTransport | undefined

@@ -1,24 +1,25 @@
 // @ts-ignore
 import helpers from '../HandleBarsHelpers';
 import Handlebars from 'handlebars';
-import EventBus from '../class/EventBus';
-import { camelize, getUUID } from '../utils';
-import { Component, ComponentMeta, EventProps, Props } from './Types';
-
+import EventBus from '../libs/EventBus';
+import { getUUID } from '../utils';
+import { ComponentMeta, EventProps } from '../types/Types';
+import { ComponentProps } from '../types/Types';
 
 enum COMPONENT_EVENTS {
+  ON_INIT= 'onInit',
   ON_CHANGE_PROPS = 'onChange',
+  ON_DESTROY = 'onChange',
 }
-
 
 export default class BaseComponent {
   eventBus;
-  props: Props;
+  props: ComponentProps;
   _element: Element | null;
   _selector: string = 'data-events';
   _meta: ComponentMeta = {tagName: 'div', id: ''};
 
-  constructor(tagName: string = 'div', props: Props = {}) {
+  constructor(tagName: string = 'div', props: ComponentProps = {}) {
     helpers();
     const eventBus = new EventBus();
     this._meta = {tagName, id: getUUID()};
@@ -27,6 +28,24 @@ export default class BaseComponent {
     this.eventBus = () => eventBus;
 
     this.registerEvents(eventBus);
+  }
+
+  dispatchOnInit() {
+    this.eventBus().emit(COMPONENT_EVENTS.ON_INIT);
+  }
+
+  dispatchOnChange() {
+    this.eventBus().emit(COMPONENT_EVENTS.ON_CHANGE_PROPS);
+  }
+
+  dispatchOnDestroy() {
+    this.eventBus().emit(COMPONENT_EVENTS.ON_DESTROY);
+  }
+
+  registerEvents(eventBus: EventBus) {
+    eventBus.on(COMPONENT_EVENTS.ON_CHANGE_PROPS, this._onChange.bind(this));
+    eventBus.on(COMPONENT_EVENTS.ON_CHANGE_PROPS, this._onInit.bind(this));
+    eventBus.on(COMPONENT_EVENTS.ON_CHANGE_PROPS, this._onDestroy.bind(this));
   }
 
   render() {
@@ -42,30 +61,24 @@ export default class BaseComponent {
     }
   }
 
-  compileTemplate(template: string, props: Props): Element | null {
+  compileTemplate(template: string, props: ComponentProps): Element | null {
     this._element = document.createElement(this._meta.tagName);
-    this._element.innerHTML = Handlebars.compile(template, props as CompileOptions)(props);
-    this._element = this._element.firstElementChild;
-    const child = this.props.childrenComponents;
-    if (child) {
-      child.forEach((component: Component) => {
-    const nodes = this._element?.querySelector(component._meta.tagName.toLowerCase());
-        if (nodes){
-          nodes.parentNode?.replaceChild(component._element, nodes);
-        }
-      })
+    if (this._element) {
+      this._element.innerHTML = Handlebars.compile(template, props as CompileOptions)(props);
+      this._element = this._element.firstElementChild;
+      const child = this.props.childrenComponents;
+      if (child) {
+        child.forEach((component: BaseComponent) => {
+          const nodes = this._element?.querySelector(component._meta.tagName.toLowerCase());
+          if (nodes) {
+            nodes.parentNode?.replaceChild(component._element, nodes);
+          }
+        })
+      }
+      this._element?.setAttribute('data-id', this._meta.id);
     }
-    this._element?.setAttribute('data-id', this._meta.id);
     this.addHandlers()
     return this._element;
-  }
-
-  dispatchOnChange() {
-    this.eventBus().emit(COMPONENT_EVENTS.ON_CHANGE_PROPS);
-  }
-
-  registerEvents(eventBus: EventBus) {
-    eventBus.on(COMPONENT_EVENTS.ON_CHANGE_PROPS, this._onChange.bind(this));
   }
 
   getChild() {
@@ -94,7 +107,7 @@ export default class BaseComponent {
     }
   }
 
-  private _makePropsProxy(props:Props) {
+  private _makePropsProxy(props: ComponentProps) {
     const self = this;
     return new Proxy(props, {
       get(target, prop) {
@@ -111,8 +124,17 @@ export default class BaseComponent {
     })
   }
 
+  private _onInit() {
+    console.log('component init')
+  }
+
   private _onChange() {
     this._render();
   }
+
+  private _onDestroy(){
+    console.log('component destroy')
+  }
+
 
 }

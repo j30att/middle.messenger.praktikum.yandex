@@ -11,7 +11,9 @@
     "buildClient": "parcel build",
     "buildServer": "webpack",
     "buildAll": "parcel build && webpack",
-    "start": "webpack && node dist/server.js"
+    "start": "webpack && node dist/server.js",
+    "lint": "eslint src",
+    "style": "stylelint src"
   },
   "author": "Igor Ippolitov",
   "license": "ISC",

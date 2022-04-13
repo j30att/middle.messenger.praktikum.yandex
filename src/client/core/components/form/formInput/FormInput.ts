@@ -1,7 +1,8 @@
 // @ts-ignore
-import styles from './input.module.scss';
+import styles from './FormInput.module.scss';
 import BaseComponent from '../../BaseComponent';
-import { Props } from '../../Types';
+import { FormInputProps } from '../../../types/Types';
+
 
 const template = `
   <div class="{{ styles.control }}">
@@ -26,7 +27,7 @@ const template = `
   `;
 
 export default class FormInput extends BaseComponent {
-  constructor(params: Props) {
+  constructor(params: FormInputProps) {
     const state = {
       styles: styles,
       showAlert: false,
@@ -42,7 +43,7 @@ export default class FormInput extends BaseComponent {
       eventSelector: 'inputSelector',
       events: [{
         event: 'keyup',
-        handler: (event: EventTarget) => {
+        handler: (event: KeyboardEvent) => {
           this.getValue(event);
         },
       }]
@@ -57,7 +58,7 @@ export default class FormInput extends BaseComponent {
         events: [...props.events,
           {
             event: 'blur',
-            handler: (event: EventTarget) => {
+            handler: (event: EventTarget | KeyboardEvent) => {
                 this.validate(event, validatorService[validator])
               },
           },
@@ -80,14 +81,13 @@ export default class FormInput extends BaseComponent {
     return this.compileTemplate(template, this.props);
   }
 
-  validate(event: EventTarget, validator: Function) {
+  validate(event: EventTarget | KeyboardEvent, validator: Function) {
     const validate = validator(event);
     if (validate.result && validate.message === this.props.alertText) return true;
     this.toggleAlert(!validate.result, validate.message);
   }
 
   getValue(event: any) {
-    console.log(event);
     this.props.value = event.currentTarget.value
   }
 

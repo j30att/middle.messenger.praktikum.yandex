@@ -1,9 +1,10 @@
 // @ts-ignore
 import styles from "./core/style/common.module.scss"
+// @ts-ignore
+import RouterLink from "./core/directives/RouterLink";
 import { routes } from "./routes/Routes"
 import RouterService from "./services/RouterService";
 import RenderService from "./services/RenderService";
-import RouterLink from "./core/directives/RouterLink";
 import ServiceLocator from "./services/ServiceLocator";
 import ChatService from "./services/ChatService";
 import ProfileService from "./services/ProfileService";
@@ -31,11 +32,13 @@ window.locator = locator;
 
 let html = renderService.render();
 
-const render = (callback) => {
-  root.appendChild(html);
+const render = (callback: Function) => {
+  if (root){
+    root.appendChild(html);
+  }
   callback();
 }
 
 render(()=>{
-  const directive = new RouterLink();
+  new RouterLink();
 });

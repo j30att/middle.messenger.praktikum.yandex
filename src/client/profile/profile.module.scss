@@ -1,4 +1,5 @@
 @import "../core/style/variables";
+
 .profileWrapper {
   height: 100vh;
   display: flex;
@@ -8,7 +9,7 @@
   position: relative;
 }
 
-.backWrapper{
+.backWrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -19,6 +20,7 @@
   align-items: center;
   line-height: 100vh;
 }
+
 .backButton {
   width: 30px;
   height: 30px;
@@ -34,7 +36,7 @@
 .avatar {
   width: 130px;
   height: 130px;
-  background-color: #EFEFEF;
+  background-color: #efefef;
   border-radius: 75px;
   color: black;
   font-size: 100px;
@@ -44,7 +46,7 @@
   transition: ease-in 500ms;
 }
 
-.avatar:before {
+.avatar::before {
   display: block;
   width: 130px;
   height: 130px;
@@ -60,14 +62,14 @@
   transition: ease-in 300ms;
 }
 
-.avatar:hover:before {
+.avatar:hover::before {
   opacity: 0.7;
   color: white;
 }
 
 .name {
   font-size: 16px;
-  padding: 20px 0 60px 0;
+  padding: 20px 0 60px;
   font-weight: 600;
 }
 
@@ -79,7 +81,7 @@
   border-top: 1px solid var(--border-color);
   width: 520px;
   transition: ease-in 500ms;
-  border-bottom: 1px solid rgba(255, 255, 128, .0);
+  border-bottom: 1px solid rgb(255 255 128 / 0%);
 }
 
 .label {
@@ -109,7 +111,7 @@
 }
 
 .submit {
-  margin: 50px auto 0 auto;
+  margin: 50px auto 0;
   width: 280px;
 }
 
@@ -134,18 +136,18 @@
   transition: ease-in 500ms;
 }
 
-.footerControl:hover{
+.footerControl:hover {
   border-bottom: 1px solid var(--primary-blue-color) !important;
-  box-shadow: 0px 10px 15px -10px rgba(51,105,243, .5);
+  box-shadow: 0 10px 15px -10px rgb(51 105 243 / 50%);
 }
 
-.control:hover{
+.control:hover {
   border-bottom: 1px solid var(--primary-blue-color) !important;
-  box-shadow: 0px 10px 15px -10px rgba(51,105,243, .5);
+  box-shadow: 0 10px 15px -10px rgb(51 105 243 / 50%);
 }
 
 .controls :last-child {
-  border-bottom: 1px solid rgba(51,105,243, 0);
+  border-bottom: 1px solid rgb(51 105 243 / 0%);
 }
 
 .displayNone {

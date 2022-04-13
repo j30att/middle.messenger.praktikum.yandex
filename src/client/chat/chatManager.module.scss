@@ -9,7 +9,7 @@
 .contacts {
   flex: 40%;
   max-width: 400px;
-  padding: 0px 10px 10px 10px;
+  padding: 0 10px 10px;
   background-color: var(--background-color);
   border-right: 1px solid var(--border-color);
   overflow-y: scroll;
@@ -24,7 +24,7 @@
   display: block;
 }
 
-.search{
+.search {
   width: 100%;
   display: flex;
   margin-bottom: 15px;
@@ -39,15 +39,6 @@
   outline: none;
   border-radius: 8px;
   text-align: center;
-}
-
-.card{
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border-color);
 }
 
 .avatar {
@@ -71,7 +62,7 @@
   margin-bottom: 4px;
 }
 
-.last-message{
+.last-message {
   max-width: 200px;
   overflow: hidden;
   color: var(--primary-grey-color);
@@ -82,11 +73,6 @@
   padding-left: 10px;
 }
 
-
-.card_wrapper {
-  display: flex;
-}
-
 .info {
   text-align: end;
   display: flex;
@@ -95,11 +81,11 @@
   align-items: end;
 }
 
-.unread-message{
+.unread-message {
   color: #fff;
   width: 20px;
   height: 20px;
-  background: #3369F3;
+  background: #3369f3;
   text-align: center;
   border-radius: 10px;
   font-size: 12px;

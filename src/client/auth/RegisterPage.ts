@@ -1,7 +1,7 @@
 // @ts-ignore
 import styles from "./auth.module.scss"
 import BaseComponent from "../core/components/BaseComponent";
-import FormInput from '../core/components/form/formInput/input.component';
+import FormInput from '../core/components/form/formInput/FormInput';
 import { Component } from '../core/components/Types';
 
 //todo выделить отдельный компонент формы

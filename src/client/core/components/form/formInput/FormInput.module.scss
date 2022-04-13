@@ -1,12 +1,12 @@
 .input-control {
   width: 100%;
-  padding: 20px 0 5px 0;
+  padding: 20px 0 5px;
   border: none;
   outline: none;
   border-bottom: 2px solid var(--primary-blue-color);
 }
 
-.input-control::placeholder{
+.input-control::placeholder {
   color: var(--placeholder-color);
   font-size: 13px;
 }
@@ -17,21 +17,22 @@
   color: #5d5d5d;
   font-size: 14px;
   cursor: text;
-  transition:0.2s ease all;
+  transition: 0.2s ease all;
 }
 
-.input-control:focus::placeholder{
+.input-control:focus::placeholder {
   opacity: 0;
 }
 
-.input-control:focus ~ label, .input-control:not(:placeholder-shown) ~ label {
+.input-control:focus ~ label,
+.input-control:not(:placeholder-shown) ~ label {
   top: 10px;
-  font-size:14px;
+  font-size: 14px;
   color: var(--primary-blue-color);
 }
 
 .alert {
-  padding: 5px 0 0 0;
+  padding: 5px 0 0;
   color: var(--alert-color);
   font-size: 12px;
   line-height: 12px;
@@ -51,7 +52,7 @@
   opacity: 0;
 }
 
-.alert-none:after{
+.alert-none::after {
   height: 12px;
-  content: ' '
+  content: " ";
 }
