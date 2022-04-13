@@ -1,25 +1,2 @@
-# Yandex practicum 
-## Chat app
-
----------
-
-###Commands
-
-yarn dev -- start dev server
-
-yarn buildClient -- build frontend
-
-yarn buildServer -- build node server
-
-yarn buildAll: --build frontend and node server
-
-yarn start: start node serve
-
----------
-
-
-###UI
-
-Figma
-
-### PR https://github.com/j30att/middle.messenger.praktikum.yandex/pull/1
+### PR1 https://github.com/j30att/middle.messenger.praktikum.yandex/pull/1
+### PR2 https://github.com/j30att/middle.messenger.praktikum.yandex/pull/2
